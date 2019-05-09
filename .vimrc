@@ -82,6 +82,8 @@ inoremap kj <Esc>:w<CR>
 inoremap <C-f> <C-o>l
 "set timeout timeoutlen=3000 ttimeoutlen=200
 
+let g:paredit_mode = 0
+
 hi MatchParen cterm=underline 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
