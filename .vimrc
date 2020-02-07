@@ -1,6 +1,3 @@
-" Putting this here for now: set column to 290 and row to 80 to get the
-" terminal to open in full screen :)
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -11,11 +8,27 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-syntastic/syntastic'
 
-Plug 'vim-scripts/paredit.vim' 
-
+" Plug 'vim-scripts/paredit.vim'
+"
 Plug 'tpope/vim-sensible'
 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+Plug 'snoe/vim-sexp'
+" let g:sexp_enable_insert_mode_mappings = 1
+
+" I can't get Meta working in Iterm2 so I'm going to map the import clojure
+" commands
+"
+
+" Barf head
+nmap <Leader>bh <Plug>(sexp_emit_head_element)
+" Barf tail
+nmap <Leader>bt <Plug>(sexp_emit_tail_element)
+" Slurp previous
+nmap <Leader>sp <Plug>(sexp_capture_prev_element)
+" Slurp next
+nmap <Leader>sn <Plug>(sexp_capture_next_element)
 
 Plug 'guns/vim-clojure-static'
 
@@ -37,13 +50,15 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 if has('nvim') || has('termguicolors')
    set termguicolors
 endif
 
-colorscheme challenger_deep
+colorscheme dracula
 
 syntax on
 filetype plugin indent on
@@ -82,7 +97,7 @@ inoremap kj <Esc>:w<CR>
 inoremap <C-f> <C-o>l
 "set timeout timeoutlen=3000 ttimeoutlen=200
 
-let g:paredit_mode = 0
+let g:paredit_mode = 1
 
 hi MatchParen cterm=underline 
 au VimEnter * RainbowParenthesesToggle

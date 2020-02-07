@@ -1,3 +1,6 @@
+# Putting this here for now: set column to 290 and row to 80 to get the
+# terminal to open in full screen :)
+
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
 alias vimf='vim $(fzf)'
@@ -14,3 +17,20 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias hafcaf='caffeinate -dut 36000'
+
+export PATH=$PATH:~/bin
+
+function gw {
+   ./gradlew $*
+}
+
+# In case I do scala + gradle again
+function gwAsDev {
+   ./gradlew "$@" -x gatlingScalafmt -x scalafmt
+}
+
+#function gwAsDev {
+#   ./gradlew "$@" -x gatlingScalafmt -x scalafmt -x scoverageScalafmt -x testScalafmt
+#}
