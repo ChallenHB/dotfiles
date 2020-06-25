@@ -1,11 +1,15 @@
 ## Set ZSH and DOTFILES variables in .zshrc, then source this file
+## Dracula iTerm2 theme!!
+## Putting this here for now: set column to 290 and row to 80 to get the
+## terminal to open in full screen :)
+## Environment specific custom commands can go in ~/.oh-my-zsh/custom/custom.sh
 
-#source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
-
-ZSH_THEME="theunraveler"
+ZSH_THEME=af-magic
+ZSH_CUSTOM=$DOTFILES/custom
 
 plugins=(
    git
+   git-prompt
    colorize
    colored-man-pages
 )
@@ -29,3 +33,4 @@ function gw {
 }
 ## Do I need to set history settings?
 # IDK, seems like zsh has prety good built ins
+
