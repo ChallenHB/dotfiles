@@ -18,8 +18,8 @@ plugins=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## Dev environment setup, MAC
-JAVA_HOME="$(/usr/libexec/java_home)"
-PATH=$PATH:~/bin
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH=$PATH:~/bin
 
 ## aliases I use
 alias vimf='vim $(fzf)'
