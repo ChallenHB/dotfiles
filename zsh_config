@@ -1,0 +1,31 @@
+## Set ZSH and DOTFILES variables in .zshrc, then source this file
+
+#source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
+
+ZSH_THEME="theunraveler"
+
+plugins=(
+   git
+   colorize
+   colored-man-pages
+)
+
+## Setup fzf if it's installed
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Dev environment setup, MAC
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH=$PATH:~/bin
+
+## aliases I use
+alias vimf='vim $(fzf)'
+alias hafcaf='caffeinate -dut 36000'
+alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
+alias removeorig='find . -name *.orig -delete'
+
+function gw {
+   ./gradlew $*
+}
+## Do I need to set history settings?
+# IDK, seems like zsh has prety good built ins

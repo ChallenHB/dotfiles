@@ -1,0 +1,40 @@
+# Putting this here for now: set column to 290 and row to 80 to get the
+# terminal to open in full screen :)
+
+GIT_PROMPT_THEME=Solarized
+GIT_PROMPT_FETCH_REMOTE_STATUS=0
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+## If fzf is installed, configures terminal to use it
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+## Dev setup
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH=$PATH:~/bin
+
+## Useful aliases
+alias hafcaf='caffeinate -dut 36000'
+alias vimf='vim $(fzf)'
+alias pg-start='pg_ctl -l /Users/challen.hb/misc/pg-logs/log -D /usr/local/var/postgres start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop'
+alias removeorig='find . -name *.orig -delete'
+
+function gw {
+   ./gradlew $*
+}
+
+shopt -s histappend # Set history file mode to append
+# -a writes current/new lines to history file
+# -c clears the history list (bash in memory concept)
+# -r reads history file into the history list
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+export HISTSIZE=100000         # big big history
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoreboth # Don't save commands that start with space (for passwords and stuff), and don't save dups
+export HISTIGNORE='ls:bg:fg:history'
+export HISTTIMEFORMAT='%F %T ' # full time in history file
+shopt -s cmdhist # force multi-line commands to one line in history
