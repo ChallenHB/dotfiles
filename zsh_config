@@ -3,6 +3,7 @@
 ## Putting this here for now: set column to 290 and row to 80 to get the
 ## terminal to open in full screen :)
 ## Environment specific custom commands can go in ~/.oh-my-zsh/custom/custom.sh
+## Using Dracula iterm theme, Monaco font
 
 ZSH_CUSTOM=$DOTFILES/custom
 ZSH_THEME=simple
