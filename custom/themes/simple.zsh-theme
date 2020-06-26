@@ -6,6 +6,6 @@ PROMPT='%{$return_code%} %(!.%{$fg[red]%}.%{$fg[yellow]%})%~%{$fg_bold[blue]%}%{
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[cyan]%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} %{✔%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚ %G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}%{…%G%}"
