@@ -4,8 +4,8 @@
 ## terminal to open in full screen :)
 ## Environment specific custom commands can go in ~/.oh-my-zsh/custom/custom.sh
 
-ZSH_THEME=af-magic
 ZSH_CUSTOM=$DOTFILES/custom
+ZSH_THEME=simple
 
 plugins=(
    git
@@ -13,9 +13,6 @@ plugins=(
    colorize
    colored-man-pages
 )
-
-## Setup fzf if it's installed
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## Dev environment setup, MAC
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -33,4 +30,8 @@ function gw {
 }
 ## Do I need to set history settings?
 # IDK, seems like zsh has prety good built ins
+
+## Setup fzf if it's installed
+## For some reason this is only working if it put it in .zshrc
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
