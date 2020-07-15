@@ -46,6 +46,12 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'airblade/vim-gitgutter'
 
+" File explorer
+Plug 'preservim/nerdtree'
+
+" Set key to toggle nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
 " Colorschemes :)
 
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
