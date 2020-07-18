@@ -29,6 +29,9 @@ alias removeorig='find . -name *.orig -delete'
 function gw {
    ./gradlew $*
 }
+
+HYPHEN_INSENSITIVE="true"
+
 ## Do I need to set history settings?
 # IDK, seems like zsh has prety good built ins
 
