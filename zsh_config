@@ -1,8 +1,9 @@
 ## Set ZSH and DOTFILES variables in .zshrc, then source this file
+## Add source $DOTFILES/zsh_config
 ## Dracula iTerm2 theme!!
 ## Putting this here for now: set column to 290 and row to 80 to get the
 ## terminal to open in full screen :)
-## Environment specific custom commands can go in ~/.oh-my-zsh/custom/custom.sh
+## Environment specific custom commands can go in $DOTFILES/custom/custom.zsh
 ## Using Dracula iterm theme, Monaco font
 
 ZSH_CUSTOM=$DOTFILES/custom
@@ -31,6 +32,8 @@ function gw {
 }
 
 HYPHEN_INSENSITIVE="true"
+COMPLETION_WATIGIN_DOTS="true"
+
 
 ## Do I need to set history settings?
 # IDK, seems like zsh has prety good built ins
