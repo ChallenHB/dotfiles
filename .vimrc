@@ -52,6 +52,8 @@ Plug 'preservim/nerdtree'
 " Set key to toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
+Plug 'tpope/vim-fugitive'
+
 " Colorschemes :)
 
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
