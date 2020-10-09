@@ -25,7 +25,7 @@ alias vimf='vim $(fzf)'
 alias hafcaf='caffeinate -dut 36000'
 alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
-alias removeorig='find . -name *.orig -delete'
+alias removeorig='find . -name \*.orig -delete'
 
 function gw {
    ./gradlew $*
