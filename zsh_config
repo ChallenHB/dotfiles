@@ -17,8 +17,9 @@ plugins=(
 )
 
 ## Dev environment setup, MAC
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH=$PATH:~/bin
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME='$SDKMAN_DIR/candidates/java/current'
+# export PATH=$PATH:~/bin
 
 ## aliases I use
 alias vimf='vim $(fzf)'
@@ -33,10 +34,6 @@ function gw {
 
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WATIGIN_DOTS="true"
-
-
-## Do I need to set history settings?
-# IDK, seems like zsh has prety good built ins
 
 ## Setup fzf if it's installed
 ## For some reason this is only working if it put it in .zshrc
