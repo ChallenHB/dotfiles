@@ -37,5 +37,7 @@ COMPLETION_WATIGIN_DOTS="true"
 
 ## Setup fzf if it's installed
 ## For some reason this is only working if it put it in .zshrc
+## Need to run this command (from fzf github)
+## $(brew --prefix)/opt/fzf/install
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
