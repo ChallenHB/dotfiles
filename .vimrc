@@ -60,6 +60,14 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+" Rust stuff
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
+let g:racer_cmd="/Users/challen/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 1
+
 call plug#end()
 
 if has('nvim') || has('termguicolors')
@@ -68,7 +76,7 @@ endif
 
 colorscheme dracula
 
-syntax on
+syntax enable
 filetype plugin indent on
 
 set nu
@@ -83,7 +91,7 @@ set nospell            " don't spellcheck by default
 set showmatch          " highlight the matching brace/paren/bracket
 set nohlsearch         " don't highlight search (<leader>hl toggles)
 set incsearch          " start searching when you type the first character
-set nohidden           " when I close a tab, remove the buffer
+set hidden             " when I close a tab, remove the buffer -- NOT. Adding this 3/5/2021
 set showmode           " show insert/visual/normal in the status line
 set nowrap             " I like it like that
 set cpo+=J             " a sentence has to be followed by two spaces after a ., !, or ?
