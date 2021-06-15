@@ -54,19 +54,38 @@ map <C-n> :NERDTreeToggle<CR>
 
 Plug 'tpope/vim-fugitive'
 
+" Rust stuff
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
 " Colorschemes :)
 
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" Rust stuff
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'bluz71/vim-moonfly-colors'
 
-let g:racer_cmd="/Users/challen/.cargo/bin/racer"
+Plug 'ayu-theme/ayu-vim'
+
+Plug 'morhetz/gruvbox'
+
+Plug 'haishanh/night-owl.vim'
+
+let g:racer_cmd="/Users/challen.hb/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
+
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+    autocmd FileType rust nmap <buffer> <leader>gD <Plug>(rust-doc-tab)
+augroup END
+
 
 call plug#end()
 
@@ -74,10 +93,11 @@ if has('nvim') || has('termguicolors')
    set termguicolors
 endif
 
-colorscheme dracula
 
 syntax enable
 filetype plugin indent on
+
+colorscheme night-owl
 
 set nu
 set ruler              " show the line number on the bar
