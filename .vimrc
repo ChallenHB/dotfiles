@@ -128,8 +128,6 @@ set smartindent
 set updatetime=100
 
 " Exit insert mode by mashing jk
-inoremap jk <Esc>:w<CR>
-inoremap kj <Esc>:w<CR>
 inoremap <C-f> <C-o>l
 "set timeout timeoutlen=3000 ttimeoutlen=200
 

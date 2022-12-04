@@ -27,6 +27,8 @@ alias hafcaf='caffeinate -dut 36000'
 alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
 alias removeorig='find . -name \*.orig -delete'
+## for when you want to fuzzy search for a file to reset
+alias gchf='git checkout `fzf`'
 
 function gw {
    ./gradlew $*
@@ -41,3 +43,12 @@ COMPLETION_WATIGIN_DOTS="true"
 ## $(brew --prefix)/opt/fzf/install
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+function rebase-dev {
+   local branch=`git rev-parse --abbrev-ref HEAD`
+   git checkout dev
+   git pull
+   echo $branch
+   git checkout $branch
+   git rebase dev
+
+}
