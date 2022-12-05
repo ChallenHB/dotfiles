@@ -5,6 +5,7 @@
 ## terminal to open in full screen :)
 ## Environment specific custom commands can go in $DOTFILES/custom/custom.zsh
 ## Using Dracula iterm theme, Monaco font
+## Run $(brew --prefix)/opt/fzf/install to use fzf completion
 
 ZSH_CUSTOM=$DOTFILES/custom
 ZSH_THEME=simple
