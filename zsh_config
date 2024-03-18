@@ -53,3 +53,14 @@ function rebase-dev {
    git rebase dev
 
 }
+
+
+function rebase {
+   local branch=`git rev-parse --abbrev-ref HEAD`
+   git checkout $1
+   git pull
+   echo $branch
+   git checkout $branch
+   git rebase $1
+
+}

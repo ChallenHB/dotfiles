@@ -118,8 +118,8 @@ set cpo+=J             " a sentence has to be followed by two spaces after a ., 
 set fo-=c              " automatically text wrap comments
 set fo-=o              " automatically insert current comment leader when you hit o or O
 
-set tabstop=2          " I prefer 3 spaces for tab
-set shiftwidth=3
+set tabstop=2          " I prefer 2 spaces for tab
+set shiftwidth=2
 set shiftround         " Round indent to nearest multiple of shiftwidth
 set smarttab
 set expandtab
