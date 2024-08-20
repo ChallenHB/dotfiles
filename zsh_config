@@ -17,7 +17,7 @@ plugins=(
    colored-man-pages
 )
 
-## Dev environment setup, MAC
+## Dev environment setup, MAC, should be handled by sdk man
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 # export JAVA_HOME='$SDKMAN_DIR/candidates/java/current'
 # export PATH=$PATH:~/bin
@@ -38,23 +38,6 @@ function gw {
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WATIGIN_DOTS="true"
 
-## Setup fzf if it's installed
-## For some reason this is only working if it put it in .zshrc
-## Need to run this command (from fzf github)
-## $(brew --prefix)/opt/fzf/install
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-function rebase-dev {
-   local branch=`git rev-parse --abbrev-ref HEAD`
-   git checkout dev
-   git pull
-   echo $branch
-   git checkout $branch
-   git rebase dev
-
-}
-
-
 function rebase {
    local branch=`git rev-parse --abbrev-ref HEAD`
    git checkout $1
@@ -64,3 +47,10 @@ function rebase {
    git rebase $1
 
 }
+
+## Required so that the git oh my zsh plugin displays information correctly
+#alias python="python3"
+
+# K8s aliases
+alias pods="kubectl get pods"
+alias pows="kubectl get pods -w"

@@ -1,0 +1,17 @@
+export ZSH=$HOME/.oh-my-zsh
+export DOTFILES=$HOME/workspace/misc/dotfiles
+
+source $DOTFILES/zsh_config
+source $ZSH/oh-my-zsh.sh
+
+### This should all be added automatically by sdkman
+##THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+## Setup fzf if it's installed
+## For some reason this is only working if it put it in .zshrc
+## Need to run this command (from fzf github)
+## $(brew --prefix)/opt/fzf/install
+## The next line should be added automatically by running install
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
