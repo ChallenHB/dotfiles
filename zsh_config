@@ -54,3 +54,6 @@ function rebase {
 # K8s aliases
 alias pods="kubectl get pods"
 alias pows="kubectl get pods -w"
+function klog {
+  kubectl logs `kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep $1` -f
+}
